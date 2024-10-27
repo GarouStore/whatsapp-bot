@@ -1,15 +1,15 @@
 {
-    "name": "whatsapp-bot",
-    "version": "1.0.0",
-    "description": "Bot de WhatsApp para consultas",
-    "main": "index.js",
-    "scripts": {
-      "start": "node index.js"
-    },
-    "dependencies": {
-      "whatsapp-web.js": "^1.18.3",
-      "qrcode-terminal": "^0.12.0",
-      "axios": "^0.27.2"
-    }
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "description": "Bot de WhatsApp para consultas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.18.3",
+    "qrcode-terminal": "^0.12.0",
+    "axios": "^0.27.2",
+    "express": "^4.18.2"
   }
-  
+}

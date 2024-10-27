@@ -1,15 +1,9 @@
 const axios = require('axios');
 const { Client, LocalAuth } = require('whatsapp-web.js');
-const qrcode = require('qrcode-terminal');
 
+// Crear el cliente con LocalAuth
 const client = new Client({
     authStrategy: new LocalAuth()
-});
-
-// Generar QR para autenticación
-client.on('qr', (qr) => {
-    qrcode.generate(qr, { small: true });
-    console.log('Escanea el código QR para iniciar sesión.');
 });
 
 // Confirmar cuando se haya autenticado
@@ -17,6 +11,10 @@ client.on('ready', () => {
     console.log('El bot está listo.');
 });
 
+// Este evento es opcional. Si la sesión ya está guardada, no se generará un QR.
+client.on('qr', (qr) => {
+    console.log('Escanea el código QR para iniciar sesión.');
+});
 // Función para responder con un formato de error en caso de comando incorrecto
 function incorrectFormat(msg, correctUsage) {
     msg.reply(`⚠️ Formato incorrecto. Usa:\n\n${correctUsage}\n\nMrSethExe & BerlinData`);
